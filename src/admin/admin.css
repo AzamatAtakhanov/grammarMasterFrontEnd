@@ -1,0 +1,148 @@
+.admin-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.admin-actions { display: flex; gap: 10px; }
+
+/* quiz list */
+.admin-list { display: grid; gap: 11px; margin-top: 27px; }
+.admin-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid #eceef5;
+  border-radius: 12px;
+  padding: 15px 17px;
+}
+.admin-row-icon {
+  width: 40px;
+  height: 40px;
+  flex: none;
+  border-radius: 11px;
+  background: #f0eeff;
+  color: #7162e5;
+  display: grid;
+  place-items: center;
+}
+.admin-row-info { flex: 1; min-width: 0; }
+.admin-row-info h3 { font-size: 13px; margin: 0 0 4px; }
+.admin-row-info p {
+  font-size: 11px;
+  color: #9b9daf;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.admin-row-count { font-size: 11px; color: #8d90a5; white-space: nowrap; margin-right: 6px; }
+
+.icon-button {
+  width: 34px;
+  height: 34px;
+  flex: none;
+  border: 0;
+  border-radius: 9px;
+  background: #f5f6fa;
+  color: #777a91;
+  display: grid;
+  place-items: center;
+  transition: .15s;
+}
+.icon-button:hover { background: #f0efff; color: #6659d8; }
+.icon-button.danger:hover { background: #fff0f0; color: #c94f55; }
+.icon-button:disabled { opacity: .4; cursor: not-allowed; background: #f5f6fa; color: #777a91; }
+
+/* sign in */
+.admin-login { max-width: 400px; margin: 30px auto 0; text-align: center; }
+.admin-login .eyebrow { justify-content: center; }
+.admin-login-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 18px;
+  border-radius: 20px;
+  background: #f0eeff;
+  color: #6c5ce7;
+  display: grid;
+  place-items: center;
+}
+.admin-login form {
+  display: grid;
+  gap: 4px;
+  margin-top: 26px;
+  padding: 22px;
+  text-align: left;
+  background: #fff;
+  border: 1px solid #eceef5;
+  border-radius: 16px;
+}
+.admin-login .primary-button { width: 100%; }
+
+/* form fields */
+.field { display: grid; gap: 7px; margin-bottom: 16px; }
+.field label { font-size: 12px; font-weight: 700; color: #555870; }
+.admin-input {
+  width: 100%;
+  border: 1px solid #e4e5ee;
+  background: #fff;
+  border-radius: 9px;
+  padding: 10px 12px;
+  outline: none;
+  font-size: 12px;
+  resize: vertical;
+}
+.admin-input:focus { border-color: #8277eb; box-shadow: 0 0 0 3px #8277eb1a; }
+
+/* quiz editor */
+.editor-details {
+  margin: 26px 0;
+  padding: 20px 22px 4px;
+  background: #fff;
+  border: 1px solid #eceef5;
+  border-radius: 14px;
+}
+.editor-question-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.editor-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; margin: 12px 0 6px; }
+.editor-option {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 6px 10px;
+  border: 1px solid #eceef4;
+  border-radius: 9px;
+  transition: .15s;
+}
+.editor-option input[type="radio"] { margin: 0; accent-color: #36a879; cursor: pointer; }
+.editor-option .admin-input { border: 0; padding: 7px 4px; background: transparent; box-shadow: none; }
+.editor-option.correct { border-color: #36a879; background: #f3fbf7; }
+.editor-option.correct .option-letter { background: #36a879; color: #fff; }
+.editor-hint { font-size: 10px; color: #a0a2b2; margin: 0 0 12px; }
+.add-question { margin-top: 15px; }
+
+.editor-bar {
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+  padding: 14px 0;
+  background: #f7f8fcf2;
+  border-top: 1px solid #eceef5;
+}
+.editor-error { font-size: 12px; font-weight: 600; color: #a94e4e; }
+
+@media (max-width: 650px) {
+  .editor-options { grid-template-columns: 1fr; }
+  .admin-row { flex-wrap: wrap; }
+  .admin-row-info { flex-basis: calc(100% - 60px); }
+  .editor-bar { flex-direction: column; align-items: stretch; }
+  .editor-bar .admin-actions { justify-content: stretch; }
+  .editor-bar .admin-actions button { flex: 1; }
+}
